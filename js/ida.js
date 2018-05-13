@@ -1,5 +1,5 @@
  $(function(){
-        set_endpoint('http://140.113.199.198:9992');
+        set_endpoint('http://IP:9992');
 		set_PUSH_INTERVAL(500);  // unit: ms
 		
         var profile = {
