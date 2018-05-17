@@ -33,21 +33,21 @@ var dai = function (profile, ida) {
     let idf_func = {};
     let odf_func = {};
     let app_id = UUID();
-	var _idf_list=[];
-	var _registered = 0;
+    var _idf_list=[];
+    var _registered = 0;
 
     for (let i = 0; i < profile.idf_list.length; i++) {
         idf_name = profile.idf_list[i][0].name;
         if(idf_name[idf_name.length-2] == '_'){
             idf_name = idf_name.substr(0, idf_name.length-2) + '-' + idf_name.substr(idf_name.length-1);
         }		
-	    idf_func[idf_name] = profile.idf_list[i][0];
+	idf_func[idf_name] = profile.idf_list[i][0];
         profile.idf_list[i][0] = idf_name;		
-		_idf_list.push(profile.idf_list[i][0]);
+	_idf_list.push(profile.idf_list[i][0]);
     }
 
     for (let i = 0; i < profile.odf_list.length; i++) {
-	    odf_name = profile.odf_list[i][0].name;
+	odf_name = profile.odf_list[i][0].name;
         if(odf_name[odf_name.length-2] == '_'){
             odf_name = odf_name.substr(0, odf_name.length-2) + '-' + odf_name.substr(odf_name.length-1);
         }		
@@ -56,7 +56,6 @@ var dai = function (profile, ida) {
     }
 
     function on_data (odf_name, data) {
-	    console.log(odf_name);
         odf_func[odf_name](data);
     }
 
@@ -77,17 +76,17 @@ var dai = function (profile, ida) {
 
         if (!_registered) {
             setTimeout(push_idf, PUSH_INTERVAL, 0);
-			return;
+	    return;
         }
 
         if (index >= _idf_list.length){
             setTimeout(push_idf, PUSH_INTERVAL, 0);
             return;
-		} 		
+	} 		
 		
-		var _idf_name = _idf_list[index];
+	var _idf_name = _idf_list[index];
         data = idf_func[_idf_name]();
-		dan2.push(_idf_name, [data]);
+	dan2.push(_idf_name, [data]);
 
         setTimeout(push_idf, PUSH_INTERVAL, index+1);
     }
@@ -117,9 +116,9 @@ var dai = function (profile, ida) {
     }
 
 	
-	dan2.register(ENDPOINT, msg, init_callback);
+    dan2.register(ENDPOINT, msg, init_callback);
     
-	if (profile.idf_list.length >0){
+    if (profile.idf_list.length >0){
         push_idf(0);
     }    
 };
