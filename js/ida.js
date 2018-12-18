@@ -4,8 +4,9 @@
 		
         var profile = {
 		    'dm_name': 'Dummy_Device',          
-			'idf_list':[[Dummy_Sensor,['None']]],
-			'odf_list':[[Dummy_Control,['None']]],			
+                    'idf_list':[[Dummy_Sensor,['None']]],
+		    'odf_list':[[Dummy_Control,['None']]],			
+		    //'u_name': 'your name'
         };
 		
         function Dummy_Sensor(){
