@@ -5,16 +5,82 @@
   <title>Dummy_Device</title>
   <script src="js/iottalkjs-web.js"></script>
   <script src="js/sa.js"></script>
+
+  <style>
+    table {
+      table-layout: fixed;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    td, th {
+      border: 1px solid #ABB2B9;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #dddddd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    col.timestamp {
+      width: 30%;
+    }
+
+    col.value {
+      width: 70%;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    /* Create two equal columns that sits next to each other */
+    .column {
+      flex: 50%;
+      padding: 10px;
+    }
+    </style>
+
 </head>
 
 <body>
-  <label for="idf">Dummy_Sensor:</label>
-  <input readonly type="text" id="idf" value=""/>
 
-  <hr/>
+  <div class="row">
+      <div class="column" style="margin-left:100px">
+        <h3>Dummy_Sensor</h3>
+        <table id="dummy-sensor">
+          <colgroup>
+            <col class="timestamp"/>
+            <col class="value"/>
+          </colgroup>
+          <tr>
+            <th>Timestamp</th>
+            <th>Value</th>
+          </tr>
+        </table>
+      </div>
 
-  <label for="odf">Dummy_Control:</label>
-  <input readonly type="text" id="odf" value=""/>
+      <div class="column">
+        <h3>Dummy_Control</h3>
+        <table id="dummy-control">
+          <colgroup>
+            <col class="timestamp"/>
+            <col class="value"/>
+          </colgroup>
+          <tr>
+            <th>Timestamp</th>
+            <th>Value</th>
+          </tr>
+        </table>
+      </div>
+  </div>
+
 </body>
 
 </html>
