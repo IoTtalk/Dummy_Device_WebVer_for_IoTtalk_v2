@@ -10,7 +10,7 @@ Open index.html in your browser
 ```
 file://file-path-to-index.html
 ```
-
+After you bind the DA in your IotTalk project, it will send and receive the data automatically.
 ## API Reference
 
 ### `class iottalkjs.DAI`
