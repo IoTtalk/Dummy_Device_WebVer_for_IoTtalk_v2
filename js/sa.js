@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const option = {
     apiUrl: 'https://iottalk2.tw/csm',
     deviceModel: 'Dummy_Device',
-    deviceName: 'MyDummyDevice',
+    // deviceName: 'MyDummyDevice',
     idfList: [[DummySensor_I, ['int']]],
     odfList: [DummyControl_O],
     pushInterval: 0,
