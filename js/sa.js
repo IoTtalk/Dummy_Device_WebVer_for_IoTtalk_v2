@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function DummySensor_I() {
     const number = Math.floor((1 + Math.random()) * 0x10000);
-    createRow('dummy-sensor', number);
+    createRow('dummySensor', number);
     return [number];
   }
 
   function DummyControl_O(data) {
-    createRow('dummy-control', data);
+    createRow('dummyControl', data);
   }
 
   const option = {
