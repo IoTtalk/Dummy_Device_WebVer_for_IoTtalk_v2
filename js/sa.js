@@ -40,12 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
     createRow('dummyControl', data);
   }
 
+  function onConnect() {
+    document.getElementById('deviceName').innerHTML += document.title;
+  }
+
   const option = {
     apiUrl: 'https://iottalk2.tw/csm',
     deviceModel: 'Dummy_Device',
     // deviceName: 'MyDummyDevice',
     idfList: [[DummySensor_I, ['int']]],
     odfList: [DummyControl_O],
+    onConnect: onConnect,
     pushInterval: 0,
     interval: {
       'DummySensor-I': 1 / 24,
