@@ -11,6 +11,8 @@ Open index.html in your browser
 file://file-path-to-index.html
 ```
 After you bind the DA in your IotTalk project, it will send and receive the data automatically.
+
+If you want to modify it into your own program, you only need to modify `sa.js`
 ## API Reference
 
 ### `class iottalkjs.DAI`
